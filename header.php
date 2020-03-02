@@ -15,7 +15,6 @@
             max-width: 750px;
             margin: auto;
         }
-
     </style>
 </head>
 <body>
