@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 02, 2020 at 10:01 AM
+-- Generation Time: Mar 02, 2020 at 03:36 PM
 -- Server version: 5.6.47
 -- PHP Version: 7.0.33-0+deb9u7
 
@@ -38,8 +38,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'support@midreg.com', 'admin', 'admin'),
-(2, 'test@test.com', 'test', '$2y$10$9X2nYoEu6auEGC0cxDiPJOUs3HKfWnjsEC4PPVm5aXHovtdelxCaW');
+(1, 'root', 'support@midreg.com', '$2y$10$6K8aYT0Oc0uhkcFUF7bqf.k.lrsUrjpINDp3RLjbRXTWvbOvEgtPC');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +58,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
