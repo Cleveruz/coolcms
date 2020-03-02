@@ -10,7 +10,9 @@ if ($_POST) {
 
     if ($user and password_verify($_POST['password'], $user['password'])) {
         // logged in
-        header('location: index.php');
+        $_SESSION['auth'] = $user;
+
+        header('location: account.php');
         exit;
     } else {
         header('location: login.php');
