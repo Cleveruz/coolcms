@@ -6,7 +6,7 @@ if ($_POST) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    mysqli_query($conn, "insert into users (email, username, password) values ('$username', '$email', '$password')");
+    mysqli_query($conn, "insert into users (email, username, password) values ('$email', '$username', '$password')");
 
     header('location: index.php');
     exit;
