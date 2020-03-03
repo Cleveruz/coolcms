@@ -19,21 +19,21 @@ if ($_POST) {
         <form method="post" action="register.php">
 
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username"><?=$lang['username']?></label>
                 <input type="username" name="username" class="form-control" id="username" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email"><?=$lang['email']?></label>
                 <input type="email" name="email" class="form-control" id="email" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password"><?=$lang['password']?></label>
                 <input type="password" name="password" class="form-control" id="password" required>
             </div>
 
-            <button type="submit" class="btn btn-secondary">Register</button>
+            <button type="submit" class="btn btn-secondary"><?=$lang['register_button']?></button>
 
         </form>
 

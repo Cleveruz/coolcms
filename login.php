@@ -26,16 +26,16 @@ if ($_POST) {
     <div class="card-body">
         <form method="post" action="login.php">
             <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username"><?=$lang['username']?></label>
                 <input type="text" class="form-control" name="username" id="username">
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password"><?=$lang['password']?></label>
                 <input type="password" class="form-control" name="password" id="username">
             </div>
 
-            <button type="submit" class="btn btn-secondary">Login</button>
+            <button type="submit" class="btn btn-secondary"><?=$lang['login_button']?></button>
         </form>
     </div>
 </div>

@@ -6,7 +6,7 @@ require_once 'header.php';
 
 <div class="card mt-1 border-light">
     <div class="card-body">
-        Hello <b><?=$auth['username']?></b>!
+        <?=$lang['hello']?> <b><?=$auth['username']?></b>!
     </div>
 </div>
 

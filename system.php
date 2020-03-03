@@ -2,6 +2,8 @@
 
 $config = parse_ini_file('config.ini');
 
+$lang = parse_ini_file('language/en.ini');
+
 $conn = mysqli_connect('localhost', $config['db_user'], $config['db_password'], $config['db_name']);
 
 session_start();
