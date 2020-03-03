@@ -7,6 +7,11 @@ $lang = parse_ini_file('language/' . $config['lang'] . '.ini');
 
 $conn = mysqli_connect('localhost', $config['db_user'], $config['db_password'], $config['db_name']);
 
+foreach ($_POST as $key => $value) {
+    $_POST[$key] = htmlspecialchars($value);
+    $_POST[$key] = mysqli_real_escape_string($conn, $_POST[$key]);
+}
+
 session_start();
 
 if (!empty($_SESSION['auth'])) {
