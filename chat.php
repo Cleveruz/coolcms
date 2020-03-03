@@ -32,7 +32,7 @@ $result = mysqli_query($conn, "select * from chat order by time desc");
 
         <?php foreach ($result as $post):?>
             <hr>
-            <?=$post['user_id']?> : <?=date('d.m.y / h:i', $post['time'])?>
+            <?=username($post['user_id'])?> : <?=date('d.m.y / h:i', $post['time'])?>
             <?php if ($auth and $auth['id'] = $post['user_id']):?>
                 <a href="chat_delete.php?id=<?=$post['id']?>">DEL</a>
             <?php endif;?>

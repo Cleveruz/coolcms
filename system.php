@@ -14,3 +14,12 @@ if (!empty($_SESSION['auth'])) {
     $auth = false;
 }
 
+function username($user_id) {
+    global $conn;
+
+    $result = mysqli_query($conn, "select * from users where id = $user_id");
+    $user = mysqli_fetch_assoc($result);
+
+    return $user['username'];
+}
+
