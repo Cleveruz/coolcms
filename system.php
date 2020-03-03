@@ -12,6 +12,11 @@ foreach ($_POST as $key => $value) {
     $_POST[$key] = mysqli_real_escape_string($conn, $_POST[$key]);
 }
 
+foreach ($_GET as $key => $value) {
+    $_GET[$key] = htmlspecialchars($value);
+    $_GET[$key] = mysqli_real_escape_string($conn, $_GET[$key]);
+}
+
 session_start();
 
 if (!empty($_SESSION['auth'])) {
