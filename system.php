@@ -1,5 +1,6 @@
 <?php
 
+
 $config = parse_ini_file('config.ini');
 
 $lang = parse_ini_file('language/' . $config['lang'] . '.ini');
@@ -23,3 +24,23 @@ function username($user_id) {
     return $user['username'];
 }
 
+function redirect($link = 'index.php') {
+    header('location: ' . $link);
+    exit;
+}
+
+function auth_only() {
+    global $auth;
+
+    if (!$auth) {
+        redirect('login.php');
+    }
+}
+
+function guest_only() {
+    global $auth;
+
+    if ($auth) {
+        redirect('account.php');
+    }
+}

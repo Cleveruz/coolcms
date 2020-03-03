@@ -2,6 +2,8 @@
 require_once 'system.php';
 require_once 'header.php';
 
+auth_only();
+
 ?>
 
 <div class="card mt-1 border-light">

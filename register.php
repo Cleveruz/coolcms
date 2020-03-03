@@ -2,6 +2,8 @@
 require_once 'system.php';
 require_once 'header.php';
 
+guest_only();
+
 if ($_POST) {
     $username = $_POST['username'];
     $email = $_POST['email'];

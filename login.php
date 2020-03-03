@@ -2,6 +2,8 @@
 require_once 'system.php';
 require_once 'header.php';
 
+guest_only();
+
 if ($_POST) {
     $username = $_POST['username'];
 
@@ -12,11 +14,9 @@ if ($_POST) {
         // logged in
         $_SESSION['auth'] = $user;
 
-        header('location: account.php');
-        exit;
+        redirect('account.php');
     } else {
-        header('location: login.php');
-        exit;
+        redirect('login.php');
     }
 }
 
