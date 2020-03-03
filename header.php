@@ -31,27 +31,29 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    <?=$lang['pages']?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="account.php"><?=$lang['account']?></a>
                     <a class="dropdown-item" href="chat.php"><?=$lang['chat']?></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="logout.php"><?=$lang['logout']?></a>
+                    <?php if ($auth):?>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="account.php"><?=$lang['account']?></a>
+                        <a class="dropdown-item" href="logout.php"><?=$lang['logout']?></a>
+                    <?php endif;?>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
+        <?php if ($auth):?>
+            <a class="btn btn-secondary my-2 mr-1 my-sm-0" href="account.php"><?=$lang['account']?></a>
+        <?php else:?>
+            <a class="btn btn-secondary my-2 mr-1 my-sm-0" href="login.php"><?=$lang['login_button']?></a>
+            <a class="btn btn-danger my-2 my-sm-0" href="register.php"><?=$lang['register_button']?></a>
+        <?php endif;?>
     </div>
 </nav>
