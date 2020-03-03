@@ -11,7 +11,11 @@ if ($_POST) {
 
     header('location: chat.php');
     exit;
+
+
 }
+
+$result = mysqli_query($conn, "select * from chat order by time desc");
 
 ?>
 
@@ -25,6 +29,12 @@ if ($_POST) {
 
             <button type="submit" class="btn btn-secondary"><?=$lang['send_button']?></button>
         </form>
+
+        <?php foreach ($result as $post):?>
+            <hr>
+            <?=$post['user_id']?> : <?=date('d.m.y / h:i', $post['time'])?><br>
+            <?=$post['message']?>
+        <?php endforeach;?>
     </div>
 </div>
 
