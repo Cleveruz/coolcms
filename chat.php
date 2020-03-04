@@ -9,10 +9,7 @@ if ($_POST) {
 
     mysqli_query($conn, "insert into chat (user_id, message, time) values ('$user_id', '$message', '$time')");
 
-    header('location: chat.php');
-    exit;
-
-
+    redirect('chat.php');
 }
 
 $result = mysqli_query($conn, "select * from chat order by time desc");
