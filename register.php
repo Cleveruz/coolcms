@@ -8,6 +8,14 @@ if ($_POST) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $user_result = mysqli_query($conn, "select * from users where username = '$username'");
+    $user = mysqli_fetch_assoc($user_result);
+
+    if ($user) {
+        redirect('register.php');
+    }
+
     mysqli_query($conn, "insert into users (email, username, password) values ('$email', '$username', '$password')");
 
     header('location: index.php');
@@ -22,7 +30,7 @@ if ($_POST) {
 
             <div class="form-group">
                 <label for="username"><?=$lang['username']?></label>
-                <input type="username" name="username" class="form-control" id="username" required>
+                <input type="text" name="username" class="form-control" id="username" required>
             </div>
 
             <div class="form-group">
