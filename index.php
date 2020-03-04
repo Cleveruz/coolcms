@@ -9,8 +9,12 @@ $news = mysqli_fetch_assoc($news_result);
 
 <div class="card border-light">
     <div class="card-body">
-        <b><?=$news['title']?></b> <?=date('d.m.y / h:i', $news['time'])?><br>
-        <?=substr($news['message'], 0, 100)?>...
+        <?php if ($news):?>
+            <b><?=$news['title']?></b> <?=date('d.m.y / h:i', $news['time'])?><br>
+            <?=substr($news['message'], 0, 100)?>...
+        <?php else:?>
+            <?=$lang['no_news_yet']?>
+        <?php endif;?>
     </div>
 </div>
 

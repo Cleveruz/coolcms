@@ -18,16 +18,16 @@ if ($_POST) {
 
 <div class="card border-light mt-1">
     <div class="card-body">
-        <form method="post" action="admin_news.php">
+        <form method="post" action="admin_add_news.php">
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title"><?=$lang['title']?></label>
                 <input type="text" name="title" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message"><?=$lang['message']?></label>
                 <textarea name="message" class="form-control" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary"><?=$lang['add_button']?></button>
         </form>
     </div>
 </div>

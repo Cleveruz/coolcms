@@ -51,7 +51,15 @@
 
         <?php if ($auth):?>
             <?php if ($auth['id'] == 1):?>
-                <a class="btn btn-primary my-2 mr-1 my-sm-0" href="admin.php">Admin</a>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="admin_add_news.php"><?=$lang['add_news']?></a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </div>
             <?php endif;?>
             <a class="btn btn-secondary my-2 mr-1 my-sm-0" href="account.php"><?=$lang['account']?></a>
         <?php else:?>
