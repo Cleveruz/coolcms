@@ -18,8 +18,7 @@ if ($_POST) {
 
     mysqli_query($conn, "insert into users (email, username, password) values ('$email', '$username', '$password')");
 
-    header('location: index.php');
-    exit;
+    redirect('login.php');
 }
 
 ?>
