@@ -1,10 +1,21 @@
 <?php
 require_once 'system.php';
 require_once 'header.php';
+
+$news_result = mysqli_query($conn, "select * from news order by time desc limit 1");
+$news = mysqli_fetch_assoc($news_result);
+
 ?>
 
+<div class="card border-light">
+    <div class="card-body">
+        <b><?=$news['title']?></b> <?=date('d.m.y / h:i', $news['time'])?><br>
+        <?=substr($news['message'], 0, 100)?>...
+    </div>
+</div>
 
-<div class="card mt-1 border-light">
+
+<div class="card border-light">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">

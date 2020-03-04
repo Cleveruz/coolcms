@@ -50,6 +50,9 @@
         </ul>
 
         <?php if ($auth):?>
+            <?php if ($auth['id'] == 1):?>
+                <a class="btn btn-primary my-2 mr-1 my-sm-0" href="admin.php">Admin</a>
+            <?php endif;?>
             <a class="btn btn-secondary my-2 mr-1 my-sm-0" href="account.php"><?=$lang['account']?></a>
         <?php else:?>
             <a class="btn btn-secondary my-2 mr-1 my-sm-0" href="login.php"><?=$lang['login_button']?></a>

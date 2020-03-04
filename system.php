@@ -54,3 +54,11 @@ function guest_only() {
         redirect('account.php');
     }
 }
+
+function admin_only() {
+    global $auth;
+
+    if (!$auth or $auth['id'] != 1) {
+        redirect('index.php');
+    }
+}

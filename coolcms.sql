@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 04, 2020 at 10:43 PM
+-- Generation Time: Mar 05, 2020 at 01:13 AM
 -- Server version: 5.7.29
 -- PHP Version: 7.3.14-1~deb10u1
 
@@ -38,6 +38,19 @@ CREATE TABLE `chat` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -59,6 +72,12 @@ ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -72,6 +91,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
